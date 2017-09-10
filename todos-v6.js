@@ -1,6 +1,5 @@
-//there should be a "display todos" button and a "toggle all" button in the app
-// CLicking "Display todos" should run todoList.displayTodos
-//Clicking "Toggle all"should run todoList.toggleAll. 
+//.toggleAll: if everything is true, make everything false
+//.toggleAll: otherwise, make everything true
 
 var todoList = {
     todos: [],
@@ -67,17 +66,13 @@ var todoList = {
     }
 };
 
-todoList.addTodo('go to the gym today!');
-todoList.addTodo('second Todo');
-
-var displayTodosButton = document.getElementById('displayTodosButton');
-
-var toggleAllButton = document.getElementById('toggleAllButton');
-
-displayTodosButton.addEventListener('click', function(){
-    todoList.displayTodos();
-});
-
-toggleAllButton.addEventListener('click', function () {
-    todoList.toggleAll();
-});
+todoList.displayTodos();
+todoList.addTodo('first');
+todoList.addTodo('second');
+todoList.addTodo('third');
+todoList.changeTodo(0, 'ma oi');
+todoList.toggleCompleted(0);
+todoList.toggleCompleted(1);
+todoList.toggleCompleted(2);
+todoList.toggleAll();
+todoList.toggleAll();
