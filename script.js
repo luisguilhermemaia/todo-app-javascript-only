@@ -1,7 +1,3 @@
-//there should be a "display todos" button and a "toggle all" button in the app
-// CLicking "Display todos" should run todoList.displayTodos
-//Clicking "Toggle all"should run todoList.toggleAll. 
-
 var todoList = {
     todos: [],
     displayTodos: function () {
@@ -67,17 +63,36 @@ var todoList = {
     }
 };
 
+var handlers = {
+    displayTodos: function () {
+        todoList.displayTodos();
+    },
+    toggleAll: function () {
+        todoList.toggleAll();
+    },
+    addTodo: function () {
+        var addTodoTextInput = document.getElementById('addTodoTextInput');
+        todoList.addTodo(addTodoTextInput.value);
+        addTodoTextInput.value = '';
+    },
+    changeTodo: function(){
+        var changeTodoPositionInput = document.getElementById('changeTodoPositionInput');
+        var changeTodoTextInput = document.getElementById('changeTodoTextInput');
+        todoList.changeTodo(changeTodoPositionInput.valueAsNumber, changeTodoTextInput.value);
+        changeTodoPositionInput.value = '';
+        changeTodoTextInput.value = '';
+    },
+    deleteTodo: function () {
+        var deleteTodoPositionInput = document.getElementById('deleteTodoPositionInput');
+        todoList.deleteTodo(deleteTodoPositionInput.valueAsNumber);
+        deleteTodoPositionInput.value = '';
+    },
+    toggleCompleted: function () {
+        var toggleTodoPossitionInput = document.getElementById('toggleTodoPossitionInput');
+        todoList.toggleCompleted(toggleTodoPossitionInput.valueAsNumber);
+        toggleTodoPossitionInput.value = '';
+    }
+};
+
 todoList.addTodo('go to the gym today!');
 todoList.addTodo('second Todo');
-
-var displayTodosButton = document.getElementById('displayTodosButton');
-
-var toggleAllButton = document.getElementById('toggleAllButton');
-
-displayTodosButton.addEventListener('click', function(){
-    todoList.displayTodos();
-});
-
-toggleAllButton.addEventListener('click', function () {
-    todoList.toggleAll();
-});

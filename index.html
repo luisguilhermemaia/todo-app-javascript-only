@@ -1,17 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 </head>
+
 <body>
     <h1>Todo List</h1>
-    
-    <button id="displayTodosButton" 
-    onclick="">Display Todos</button>
-    <button id="toggleAllButton">Toggle ALL</button>
-    
+    <div>
+        <button onclick="handlers.displayTodos()">Display Todos</button>
+        <button onclick="handlers.toggleAll()">Toggle ALL</button>
+    </div>
+
+    <div>
+        <button onclick="handlers.addTodo()">Add</button>
+        <input type="text" id="addTodoTextInput">
+    </div>
+
+    <div>
+        <button onclick="handlers.changeTodo()">Change</button>
+        <input type="number" id="changeTodoPositionInput" placeholder="position">
+        <input type="text" id="changeTodoTextInput" placeholder="text">
+    </div>
+
+    <div>
+        <button onclick="handlers.deleteTodo()">Delete</button>
+        <input type="number" id="deleteTodoPositionInput">
+    </div>
+
+    <div>
+        <button onclick="handlers.toggleCompleted()">Toggle</button>
+        <input type="number" id="toggleTodoPossitionInput">
+    </div>
+
     <script src="script.js"></script>
 </body>
+
 </html>
